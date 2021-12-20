@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jleslee <jleslee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: layano <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 23:14:28 by jleslee           #+#    #+#             */
-/*   Updated: 2021/11/26 23:58:34 by jleslee          ###   ########.fr       */
+/*   Created: 2021/12/20 17:34:25 by layano            #+#    #+#             */
+/*   Updated: 2021/12/20 17:34:28 by layano           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*cutting(char *str)
 	return (buff);
 }
 
-// Возвращает строку + \0
+// Подготовка конечной строки для вывода, возвращает строку + \0
 
 char	*new_line(char *str)
 {
@@ -112,22 +112,3 @@ char	*get_next_line(int fd)
 	str[fd] = cutting(str[fd]);
 	return (buff);
 }
-
-// #include <fcntl.h>
-// int main(void)
-// {
-// 	int		fd[5];
-// 	char	*s1;
-// 	char	*s2;
-// 	char	*s3;
-
-// 	fd[1] = open("Tsiolkovsky.txt", O_RDONLY);
-// 	s1 = get_next_line(fd[1]);
-// 	printf("%s\n",s1);
-// 	fd[1] = open("Jukovsky.txt", O_RDONLY);
-// 	s2 = get_next_line(fd[1]);
-// 	printf("%s\n",s2);
-// 	fd[2] = open("Mendeleev.txt", O_RDONLY);
-// 	s3 = get_next_line(fd[2]);
-// 	printf("%s",s3);
-// }

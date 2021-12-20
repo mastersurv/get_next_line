@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jleslee <jleslee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: layano <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 20:08:42 by jleslee           #+#    #+#             */
-/*   Updated: 2021/11/26 23:36:39 by jleslee          ###   ########.fr       */
+/*   Created: 2021/12/20 17:33:09 by layano            #+#    #+#             */
+/*   Updated: 2021/12/20 17:33:14 by layano           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,8 @@ char	*new_line(char *str)
 	return (buff);
 }
 
-// Читает весь текст в static
+/*Read string from file
+  1) */
 
 char	*reader(int fd, char *str)
 {
@@ -111,23 +112,4 @@ char	*get_next_line(int fd)
 	buff = new_line(str);
 	str = cutting(str);
 	return (buff);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	int		fd;
-
-	fd = open("input.txt", O_RDONLY);
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s\n", get_next_line(fd));
-	printf("%c", '\n');
-	printf("%s\n", "--------------------------------------ПРОВЕРКА ДАЛЬНЕЙШЕГО ЧТЕНИЯ (ДОЛЖЕН ВЫВОДИТЬ (null)):--------------------------------------");
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
-	printf("%s", get_next_line(fd));
 }

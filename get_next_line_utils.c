@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jleslee <jleslee@student.42.fr>            +#+  +:+       +#+        */
+/*   By: layano <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/24 21:34:43 by jleslee           #+#    #+#             */
-/*   Updated: 2021/11/26 23:41:41 by jleslee          ###   ########.fr       */
+/*   Created: 2021/12/20 17:36:14 by layano            #+#    #+#             */
+/*   Updated: 2021/12/20 17:36:17 by layano           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (buff);
 }
 
-// Длинна строки
-
 int	ft_strlen(const char *p)
 {
 	int	i;
@@ -52,40 +50,6 @@ int	ft_strlen(const char *p)
 	while (p[i])
 		i++;
 	return (i);
-}
-
-// дублирование строки
-
-char	*ft_strdup(const char *str)
-{
-	int		n;
-	char	*res;
-
-	n = (int)(ft_strlen(str) + 1);
-	res = NULL;
-	res = (char *)malloc(n);
-	if (res == NULL)
-		return (0);
-	ft_memcpy(res, str, n);
-	return (res);
-}
-
-// Копирование n-символов из src в dest
-
-void	*ft_memcpy(void *dest, const void *src, int n)
-{
-	unsigned char	*new_dest;
-	unsigned char	*new_src;
-	int				i;
-
-	if (!dest && !src)
-		return (0);
-	new_dest = dest;
-	new_src = (unsigned char *)src;
-	i = 0;
-	while (i++ < n)
-		*new_dest++ = *new_src++;
-	return (dest);
 }
 
 // Подсчёт количества символов строки
